@@ -1,0 +1,1 @@
+include "textsynthesizor.builder", "textsynthesizor.tokenizer.words", "textsynthesizor.tokenizer.letters", "textsynthesizor.app"

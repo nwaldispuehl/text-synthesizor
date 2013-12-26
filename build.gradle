@@ -1,0 +1,24 @@
+ext.collectLibs = 0
+
+subprojects {
+    group = 'ch.retorte.textsynthesizor'
+    version = '0.0.1'
+
+    apply plugin: 'java'
+
+    repositories {
+       mavenCentral()
+    }
+
+    jar {
+       manifest.attributes provider: 'gradle'
+    }
+    
+    dependencies {
+      compile group: 'com.google.guava', name: 'guava', version: '15.0'
+    
+      testCompile 'org.hamcrest:hamcrest-all:1.3' // Note: Hamcrest needs to be placed before JUnit to use hamcrests versions of certain classes in the tests.
+      testCompile 'junit:junit:4.11'
+      testCompile 'org.mockito:mockito-all:1.9.5'
+    }
+}

@@ -1,0 +1,17 @@
+apply plugin: 'application'
+
+mainClassName = "ch.retorte.textsynthesizor.Main"
+
+dependencies {
+  compile project(':textsynthesizor.builder')
+  compile project(':textsynthesizor.tokenizer.words')
+  compile project(':textsynthesizor.tokenizer.letters')
+  
+  compile 'org.mod4j.org.apache.commons:cli:1.0.0'
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "Gradle", "Implementation-Version": version, "Main-Class": mainClassName)
+    }
+}
