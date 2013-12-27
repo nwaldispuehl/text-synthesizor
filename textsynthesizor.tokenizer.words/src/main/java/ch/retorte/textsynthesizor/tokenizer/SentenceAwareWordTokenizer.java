@@ -16,6 +16,8 @@ import ch.retorte.textsynthesizor.model.TokenFactory;
  */
 public class SentenceAwareWordTokenizer implements Tokenizer {
 
+  private TokenFactory tokenFactory = new TokenFactory();
+
   @Override
   public List<Token> tokenize(String input) {
     List<Token> result = newArrayList();
@@ -23,7 +25,7 @@ public class SentenceAwareWordTokenizer implements Tokenizer {
     boolean isFirst = true;
     for (String s : input.split("\\s")) {
       if (!s.isEmpty()) {
-        result.add(new TokenFactory().createFrom(s, isFirst));
+        result.add(tokenFactory.createFrom(s, isFirst));
         isFirst = false;
 
         for (String terminator : getSequenceTerminators()) {

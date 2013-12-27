@@ -14,6 +14,8 @@ import ch.retorte.textsynthesizor.model.TokenFactory;
  */
 public class LetterTokenizer implements Tokenizer {
 
+  private TokenFactory tokenFactory = new TokenFactory();
+
   @Override
   public List<Token> tokenize(String input) {
     List<Token> result = newArrayList();
@@ -21,7 +23,7 @@ public class LetterTokenizer implements Tokenizer {
     boolean isFirst = true;
     for (String s : input.split("")) {
       if (!s.isEmpty()) {
-        result.add(new TokenFactory().createFrom(s, isFirst));
+        result.add(tokenFactory.createFrom(s, isFirst));
         isFirst = false;
       }
     }
