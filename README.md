@@ -37,7 +37,7 @@ Run the textsynthesizor with any text body to synthesize text with similar proba
 > Oh there's none so rare, as can compare
 > with King Cole and his fiddlers three.
 
-_(See http://en.wikipedia.org/wiki/Old_King_Cole)._
+_(See [en.wikipedia.org/wiki/Old_King_Cole](http://en.wikipedia.org/wiki/Old_King_Cole))._
 
 When we call the application on this file without any other arguments, it produces the following output:
 ```
@@ -50,7 +50,7 @@ By default, the textsynthesizor analyses all [2-grams](http://en.wikipedia.org/w
 <a name='varying_ngrams' />
 ### Varying N-Grams
 
-By varying the n-gram argument one can affect how much the output text looks like the original text. When selecting a larger value, the text is more similar to the source:
+By varying the n-gram argument ('n' option) one can affect how much the output text looks like the original text. When selecting a larger value, the text is more similar to the source:
 ```
 $ textsynthesizor.app -n 4 king_cole.txt
 ```
@@ -124,16 +124,18 @@ $ textsynthesizor.app -t letter -s 120 -n 1 king_cole.txt
 How to build and run?
 ---------------------
 
-1.  Clone the repository and change into the cloned project:
+Clone the repository and change into the cloned project:
 ```
-$ git clone https://github.com/nwaldispuehl/version-tiger.git
+$ git clone https://github.com/nwaldispuehl/text-synthesizor.git
 $ cd text-synthesizor
 ``` 
-2. Build the project with [**gradle**](http://www.gradle.org/). Either use your own installation, or use the shipped version as shown here:
+
+Build the project with [**gradle**](http://www.gradle.org/). Either use your own installation, or use the shipped version as shown here:
 ```
 text-synthesizor$ ./gradlew installApp
 ``` 
-3. Switch into the build directory and run the installed app:
+
+Switch into the build directory and run the installed app:
 ```
 text-synthesizor$ cd textsynthesizor.app/build/install/textsynthesizor.app/
 text-synthesizor/textsynthesizor.app/build/install/textsynthesizor.app$ ./bin/textsynthesizor.app
@@ -149,7 +151,7 @@ How to download?
 ---------------------
 If you just want to try it out, download the latest release from the release directory:
 
-[Text-Synthesizor releases](./releases/)
+[Text-Synthesizor releases](https://github.com/nwaldispuehl/text-synthesizor/releases)
 
 Unpack the archive (adapt version if needed) and start the application as follows. Certainly, you need a installed Java runtime (>= 1.6) on your system. On Microsoft Windows systems just use the .bat file.
 
