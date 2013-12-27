@@ -3,10 +3,7 @@ package ch.retorte.textsynthesizor.builder;
 import static com.google.common.base.Joiner.on;
 import static com.google.common.collect.Lists.newArrayList;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import com.google.common.annotations.VisibleForTesting;
 
 import ch.retorte.textsynthesizor.model.NGram;
 import ch.retorte.textsynthesizor.model.NGramFactory;
@@ -14,6 +11,8 @@ import ch.retorte.textsynthesizor.model.Token;
 import ch.retorte.textsynthesizor.model.TokenFactory;
 import ch.retorte.textsynthesizor.tokenizer.Tokenizer;
 import ch.retorte.textsynthesizor.utils.RingBuffer;
+
+import com.google.common.annotations.VisibleForTesting;
 
 /**
  * The {@link MarkovChainBuilder} manages to put all tokens together to the desired n-grams and puts them into the {@link Chain} appropriately. It then
@@ -82,7 +81,7 @@ public class MarkovChainBuilder {
    */
   @VisibleForTesting
   List<Token> prepareTokenList(List<Token> tokenList, int n) {
-    List<Token> inputList = new ArrayList<Token>(tokenList.size() + 2 * n);
+    List<Token> inputList = newArrayList();
 
     for (Token t : tokenList) {
       if (t.isFirst()) {
@@ -90,7 +89,6 @@ public class MarkovChainBuilder {
           inputList.add(tokenFactory.createEmptyToken());
         }
       }
-
       inputList.add(t);
     }
 
