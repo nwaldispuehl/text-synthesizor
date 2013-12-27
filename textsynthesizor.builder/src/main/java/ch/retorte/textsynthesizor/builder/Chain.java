@@ -47,13 +47,17 @@ public class Chain {
       return new TokenFactory().createEmptyToken();
     }
 
-    return randonlyChooseSingleTokenOf(getFlatTokenList(tokenMap));
+    return randomlyChooseSingleTokenOf(getFlatTokenList(tokenMap));
   }
 
-  private Token randonlyChooseSingleTokenOf(List<Token> tokens) {
+  private Token randomlyChooseSingleTokenOf(List<Token> tokens) {
     return tokens.get(random.nextInt(tokens.size()));
   }
 
+  /**
+   * Flattens out the occurrence map of tokens, that is, puts every token as many times as it occurrs into a list so that we can just randomly pick one member
+   * of the list.
+   */
   private List<Token> getFlatTokenList(Map<Token, Integer> tokenMap) {
     List<Token> result = newArrayList();
     for (Entry<Token, Integer> entry : tokenMap.entrySet()) {
