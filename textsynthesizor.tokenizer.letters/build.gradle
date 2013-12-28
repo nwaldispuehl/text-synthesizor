@@ -1,3 +1,6 @@
+group = 'ch.retorte.textsynthesizor'
+version = '0.0.1'
+
 dependencies {
   compile project(':textsynthesizor.builder')
 }

@@ -1,5 +1,8 @@
 apply plugin: 'application'
 
+group = 'ch.retorte.textsynthesizor'
+version = '0.0.1'
+
 mainClassName = "ch.retorte.textsynthesizor.Main"
 
 dependencies {

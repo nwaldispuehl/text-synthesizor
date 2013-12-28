@@ -1,9 +1,4 @@
-ext.collectLibs = 0
-
 subprojects {
-    group = 'ch.retorte.textsynthesizor'
-    version = '0.0.1'
-
     apply plugin: 'java'
 
     repositories {
