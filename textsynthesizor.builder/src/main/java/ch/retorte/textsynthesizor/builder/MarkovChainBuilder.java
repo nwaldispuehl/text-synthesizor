@@ -22,6 +22,8 @@ import com.google.common.annotations.VisibleForTesting;
  */
 public class MarkovChainBuilder {
 
+  private static final String EMPTY_STRING = "";
+
   private final Tokenizer tokenizer;
   private List<Token> tokens;
 
@@ -102,20 +104,26 @@ public class MarkovChainBuilder {
 
   @VisibleForTesting
   String generateStringOfLength(int tokens) {
+    if (isChainEmpty()) {
+      return EMPTY_STRING;
+    }
+
     List<String> result = newArrayList();
 
     while (result.size() < tokens) {
-
       Token nextToken = extractNextToken();
 
       if (!nextToken.isEmpty()) {
         result.add(nextToken.getContent());
       }
-
       buffer.addItem(nextToken);
     }
 
     return on(tokenizer.getDelimiter()).join(result);
+  }
+
+  private boolean isChainEmpty() {
+    return chain.isEmpty();
   }
 
   @VisibleForTesting

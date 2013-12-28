@@ -50,6 +50,10 @@ public class Chain {
     return randomlyChooseSingleTokenOf(getFlatTokenList(tokenMap));
   }
 
+  public boolean isEmpty() {
+    return nGrams.isEmpty();
+  }
+
   private Token randomlyChooseSingleTokenOf(List<Token> tokens) {
     return tokens.get(random.nextInt(tokens.size()));
   }
