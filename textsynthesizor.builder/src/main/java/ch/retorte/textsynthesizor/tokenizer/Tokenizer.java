@@ -12,8 +12,8 @@ import ch.retorte.textsynthesizor.model.Token;
 public interface Tokenizer {
 
   /**
-   * Tokenizes the input string according to the rules imposed by the tokenizer implementation. Note that at least one token created by the tokenizer
-   * implementation must have set the isFirst flag to true.
+   * Tokenizes the input string according to the rules imposed by the tokenizer implementation. Note that if the number of tokens is larger than zero, at least
+   * one token created by the tokenizer implementation must have set the isFirst flag to true.
    * 
    * @param input
    *          the input string to be tokenized.
