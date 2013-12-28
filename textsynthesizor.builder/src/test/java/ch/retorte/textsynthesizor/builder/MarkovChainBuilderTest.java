@@ -87,6 +87,7 @@ public class MarkovChainBuilderTest extends SynthesizorTestCommons {
     builder.initializeBufferWithSize(1);
     Token createdToken = createTokenWith("abc");
     when(builder.extractNextToken()).thenReturn(createdToken);
+    when(builder.isChainEmpty()).thenReturn(false);
 
     // when
     builder.generateStringOfLength(1);

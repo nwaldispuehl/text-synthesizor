@@ -122,7 +122,8 @@ public class MarkovChainBuilder {
     return on(tokenizer.getDelimiter()).join(result);
   }
 
-  private boolean isChainEmpty() {
+  @VisibleForTesting
+  boolean isChainEmpty() {
     return chain.isEmpty();
   }
 
