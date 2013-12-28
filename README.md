@@ -141,7 +141,7 @@ text-synthesizor$ cd textsynthesizor.app/build/install/textsynthesizor.app/
 text-synthesizor/textsynthesizor.app/build/install/textsynthesizor.app$ ./bin/textsynthesizor.app
 ``` 
 
-Certainly, you could run the project also directly with gradle:
+Certainly, you could run the project also directly with gradle, but providing command line arguments is not that easy this way:
 ```
 text-synthesizor$ ./gradlew run
 ```
