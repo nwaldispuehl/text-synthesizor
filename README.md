@@ -1,7 +1,7 @@
 Text Synthesizor
 ================
 
-_TextSynthesizor, a small text synthesizing utility based on the theory of markov chains._
+_TextSynthesizor, a small text synthesizing utility based on the theory of [markov chains](http://en.wikipedia.org/wiki/Markov_chain)._
 
 ```
 Text Synthesizor -- Markov Chain Text Generation
