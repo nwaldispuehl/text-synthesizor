@@ -95,34 +95,4 @@ public class MarkovChainBuilderTest extends SynthesizorTestCommons {
     verify(builder).extractNextToken();
   }
 
-  @Test
-  public void shouldGenerateRandomText_1() {
-    // given
-    List<Token> tokenList = newArrayList();
-    tokenList.add(createTokenWith("a", true));
-    when(tokenizer.tokenize("a")).thenReturn(tokenList);
-
-    // when
-    String generatedText = builder.generateTextWith(0, 3, "a");
-
-    // then
-    assertThat(generatedText, is("aaa"));
-  }
-
-  @Test
-  public void shouldGenerateRandomText_2() {
-    // given
-    List<Token> tokenList = newArrayList();
-    tokenList.add(createTokenWith("Good", true));
-    tokenList.add(createTokenWith("morning!"));
-    when(tokenizer.tokenize(Mockito.anyString())).thenReturn(tokenList);
-    when(tokenizer.getDelimiter()).thenReturn(" ");
-
-    // when
-    String generatedText = builder.generateTextWith(1, 6, "");
-
-    // then
-    assertThat(generatedText, is("Good morning! Good morning! Good morning!"));
-  }
-
 }
