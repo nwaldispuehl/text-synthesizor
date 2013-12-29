@@ -153,7 +153,7 @@ If you just want to try it out, download the latest release from the release dir
 
 [Text-Synthesizor releases](https://github.com/nwaldispuehl/text-synthesizor/releases)
 
-Unpack the archive (adapt version if needed) and start the application as follows. Certainly, you need a installed Java runtime (>= 1.6) on your system. On Microsoft Windows systems just use the .bat file.
+Unpack the archive (adapt version if needed) and start the application as follows on Linux and OS X operating systems. Certainly, you need a installed [Java](http://www.java.com/) runtime (>= 1.6) on your system. On Microsoft Windows systems just use the .bat file.
 
 ```
 $ unzip textsynthesizor.app-0.0.1.zip
