@@ -12,7 +12,7 @@ import org.junit.Test;
 import ch.retorte.textsynthesizor.model.Token;
 
 /**
- * Test cases for the {@link SimpleWordTokenizer}.
+ * Test cases for the {@link SentenceAwareWordTokenizer}.
  * 
  * @author nw
  */
