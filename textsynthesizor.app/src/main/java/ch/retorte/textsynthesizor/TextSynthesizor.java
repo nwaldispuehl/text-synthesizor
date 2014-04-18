@@ -43,8 +43,8 @@ public class TextSynthesizor {
     parseArguments(args);
     readInputFromFile();
 
-    MarkovChainBuilder builder = createBuilder();
-    String generatedText = builder.generateTextWith(nGramSize, outputSize, input);
+    MarkovChainBuilder builder = createBuilderWith(nGramSize, input);
+    String generatedText = builder.generateRandomTextOfSize(outputSize);
 
     System.out.println(generatedText);
   }
@@ -128,8 +128,8 @@ public class TextSynthesizor {
     System.err.println("Provided file not found: " + message);
   }
 
-  private MarkovChainBuilder createBuilder() {
-    return new MarkovChainBuilder(getTokenizer());
+  private MarkovChainBuilder createBuilderWith(int nGramSize, String input) {
+    return new MarkovChainBuilder(getTokenizer(), nGramSize, input);
   }
 
   private Tokenizer getTokenizer() {

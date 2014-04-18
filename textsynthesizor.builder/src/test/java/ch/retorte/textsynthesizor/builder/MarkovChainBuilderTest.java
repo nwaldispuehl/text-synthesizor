@@ -31,7 +31,7 @@ public class MarkovChainBuilderTest extends SynthesizorTestCommons {
 
   @Before
   public void setup() {
-    builder = spy(new MarkovChainBuilder(tokenizer));
+    builder = spy(new MarkovChainBuilder(tokenizer, 0, null));
     when(tokenizer.getDelimiter()).thenReturn("");
   }
 

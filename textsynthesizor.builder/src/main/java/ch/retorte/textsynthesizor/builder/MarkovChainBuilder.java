@@ -34,14 +34,32 @@ public class MarkovChainBuilder {
   private NGramFactory nGramFactory = new NGramFactory();
   private TokenFactory tokenFactory = new TokenFactory();
 
-  public MarkovChainBuilder(Tokenizer tokenizer) {
+  /**
+   * Sets up the builder by splitting the input into n-grams with the provided tokenizer.
+   * 
+   * @param tokenizer
+   *          the tokenizer to use for splitting up the input.
+   * @param nGram
+   *          how many following tokens to consider for analysis.
+   * @param input
+   *          the input string to analyze.
+   */
+  public MarkovChainBuilder(Tokenizer tokenizer, int nGram, String input) {
     this.tokenizer = tokenizer;
-  }
-
-  public String generateTextWith(int nGram, int outputTokens, String input) {
     generateTokensOf(input);
     buildProbabilityTableWith(nGram);
     initializeBufferWithSize(nGram);
+  }
+
+  /**
+   * Creates random text of a certain token length based on the data provided previously (tokenizer, n-gram, and input).
+   * 
+   * @param outputTokens
+   *          the number of tokens we should generate for output. The actual string size of this output is thus depending on the size of a token. If the value
+   *          is t and the token is a word, the output is certainly t words.
+   * @return a random text of size outputTokens tokens based on the input data.
+   */
+  public String generateRandomTextOfSize(int outputTokens) {
     return generateStringOfLength(outputTokens);
   }
 

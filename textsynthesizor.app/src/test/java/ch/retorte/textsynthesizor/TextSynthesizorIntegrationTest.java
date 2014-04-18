@@ -18,16 +18,16 @@ import ch.retorte.textsynthesizor.tokenizer.Tokenizer;
  */
 public class TextSynthesizorIntegrationTest {
 
-  private Tokenizer l = new LetterTokenizer();
-  private Tokenizer w = new SimpleWordTokenizer();
-  private Tokenizer s = new SentenceAwareWordTokenizer();
+  private Tokenizer letter = new LetterTokenizer();
+  private Tokenizer word = new SimpleWordTokenizer();
+  private Tokenizer sentence = new SentenceAwareWordTokenizer();
 
   private void testSynthesizorWith(Tokenizer tokenizer, int nGramSize, int outputSize, String input, String expectedOutput) {
     // given
-    MarkovChainBuilder builder = new MarkovChainBuilder(tokenizer);
+    MarkovChainBuilder builder = new MarkovChainBuilder(tokenizer, nGramSize, input);
 
     // when
-    String generatedText = builder.generateTextWith(nGramSize, outputSize, input);
+    String generatedText = builder.generateRandomTextOfSize(outputSize);
 
     // then
     assertThat(generatedText, is(expectedOutput));
@@ -35,20 +35,20 @@ public class TextSynthesizorIntegrationTest {
 
   @Test
   public void shouldGenerateSingleLetters() {
-    testSynthesizorWith(l, 0, 3, "a", "aaa");
-    testSynthesizorWith(w, 0, 3, "a", "a a a");
+    testSynthesizorWith(letter, 0, 3, "a", "aaa");
+    testSynthesizorWith(word, 0, 3, "a", "a a a");
   }
 
   @Test
   public void shouldGenerateSameInput() {
-    testSynthesizorWith(w, 1, 6, "Good morning!", "Good morning! Good morning! Good morning!");
+    testSynthesizorWith(word, 1, 6, "Good morning!", "Good morning! Good morning! Good morning!");
   }
 
   @Test
   public void shouldWorkWithEmptyInputString() {
-    testSynthesizorWith(l, 0, 1, "", "");
-    testSynthesizorWith(w, 0, 1, "", "");
-    testSynthesizorWith(s, 0, 1, "", "");
+    testSynthesizorWith(letter, 0, 1, "", "");
+    testSynthesizorWith(word, 0, 1, "", "");
+    testSynthesizorWith(sentence, 0, 1, "", "");
   }
 
 }
