@@ -63,10 +63,9 @@ public class TextSynthesizor {
     CommandLine cmd = null;
     try {
       cmd = parser.parse(cliOptions, args);
-    } catch (ParseException e) {
-      printUsageMessage();
-      System.out.print(e.getMessage());
-      quitProgram();
+    }
+    catch (ParseException e) {
+      quitProgramWithError(e.getMessage());
     }
 
     try {
@@ -83,7 +82,8 @@ public class TextSynthesizor {
       }
 
       inputFilePath = (String) cmd.getArgList().get(cmd.getArgList().size() - 1);
-    } catch (Exception e) {
+    }
+    catch (Exception e) {
       printUsageMessage();
       quitProgram();
     }
@@ -110,22 +110,19 @@ public class TextSynthesizor {
     System.exit(0);
   }
 
-  private void quitProgramWithError() {
+  private void quitProgramWithError(String errorMessage) {
+    printProgramTitle();
+    System.err.println(errorMessage);
     System.exit(1);
   }
 
   private void readInputFromFile() {
     try {
       input = Files.toString(new File(inputFilePath), Charset.defaultCharset());
-    } catch (Exception e) {
-      printFileNotFoundMessage(e.getMessage());
-      quitProgramWithError();
     }
-  }
-
-  private void printFileNotFoundMessage(String message) {
-    printProgramTitle();
-    System.err.println("Provided file not found: " + message);
+    catch (Exception e) {
+      quitProgramWithError(e.getMessage());
+    }
   }
 
   private MarkovChainBuilder createBuilderWith(int nGramSize, String input) {
