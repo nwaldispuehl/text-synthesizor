@@ -22,6 +22,7 @@ usage: textsynthesizor.app [OPTIONS] inputfile
  * [Switch Tokenizers](#switch_tokenizers) 
 * [How to build and run?](#how_to_build_and_run)  
 * [How to download?](#how_to_download)  
+* [Current build status](#build)  
 
 <a name='how_does_it_work' />
 How does it work?
@@ -160,3 +161,8 @@ $ unzip textsynthesizor.app-0.0.1.zip
 $ cd textsynthesizor.app-0.0.1.app/
 $ ./bin/textsynthesizor.app
 ``` 
+
+<a name='build' />
+Current build status
+---------------------
+[![Build Status](https://travis-ci.org/nwaldispuehl/text-synthesizor.svg?branch=master)](https://travis-ci.org/nwaldispuehl/text-synthesizor)
