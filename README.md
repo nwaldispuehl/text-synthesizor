@@ -102,7 +102,7 @@ $ textsynthesizor.app -t letter -s 120 -n 3 king_cole.txt
 > He called for he had a merry old soul was he;
 > Oh there's none soul was called for his pipe, and a
 
-There, thats a bit better. Certainly, we can also produce random letters with the origins probability distribution with the following call:
+There, that's a bit better. Certainly, we can also produce random letters with the origins probability distribution with the following call:
 ```
 $ textsynthesizor.app -t letter -s 120 -n 0 king_cole.txt
 ```
