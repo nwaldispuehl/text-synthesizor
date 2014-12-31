@@ -1,4 +1,4 @@
-/build
+build/
 
 .gradle/
 
@@ -6,4 +6,5 @@
 .project
 .settings/
 bin/
-
+.idea/
+*.iml

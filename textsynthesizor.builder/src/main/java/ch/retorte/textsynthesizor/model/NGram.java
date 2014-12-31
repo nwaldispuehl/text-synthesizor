@@ -1,10 +1,9 @@
 package ch.retorte.textsynthesizor.model;
 
+import static com.google.common.base.Joiner.on;
 import static com.google.common.collect.Lists.newArrayList;
 
 import java.util.List;
-
-import com.google.common.base.Joiner;
 
 /**
  * Immutable n-gram representation.
@@ -15,26 +14,12 @@ public class NGram {
   
   private static final String N_GRAM_DELIMITER = "-";
 
-  private final List<Token> tokens;
   private final String stringRepresentation;
   
   public NGram(List<Token> tokens) {
-    this.tokens = tokens;
-    stringRepresentation = stringifyTokens();
+    stringRepresentation = stringifyTokens(tokens);
   }
   
-  public List<Token> getTokens() {
-    return tokens;
-  }
-
-  public boolean isEmpty() {
-    boolean result = true;
-    for (Token t : tokens) {
-      result &= t.isEmpty();
-    }
-    return result;
-  }
-
   @Override
   public boolean equals(Object obj) {
     if (obj instanceof NGram) {
@@ -53,7 +38,7 @@ public class NGram {
     return "[" + stringRepresentation + "]";
   }
 
-  private String stringifyTokens() {
+  private String stringifyTokens(List<Token> tokens) {
     List<Token> result = newArrayList();
     for (Token t : tokens) {
       if (!t.getContent().isEmpty()) {
@@ -61,6 +46,6 @@ public class NGram {
       }
     }
 
-    return Joiner.on(N_GRAM_DELIMITER).join(result);
+    return on(N_GRAM_DELIMITER).join(result);
   }
 }

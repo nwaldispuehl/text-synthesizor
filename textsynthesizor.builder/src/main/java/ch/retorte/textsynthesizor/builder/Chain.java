@@ -24,20 +24,24 @@ public class Chain {
 
   public void add(NGram nGram, Token token) {
 
-    if (!nGrams.containsKey(nGram)) {
+    if (!keyExist(nGram)) {
       Map<Token, Integer> tokenList = newHashMap();
       tokenList.put(token, 0);
       nGrams.put(nGram, tokenList);
     }
 
-    Map<Token, Integer> ngramTable = nGrams.get(nGram);
+    Map<Token, Integer> nGramTable = nGrams.get(nGram);
 
-    if (!ngramTable.containsKey(token)) {
-      ngramTable.put(token, 0);
+    if (!nGramTable.containsKey(token)) {
+      nGramTable.put(token, 0);
     }
 
-    Integer occurrencesSoFar = ngramTable.get(token);
-    ngramTable.put(token, occurrencesSoFar + 1);
+    Integer occurrencesSoFar = nGramTable.get(token);
+    nGramTable.put(token, occurrencesSoFar + 1);
+  }
+
+  private boolean keyExist(NGram nGram) {
+    return nGrams.containsKey(nGram);
   }
 
   public Token getNextTokenFor(NGram nGram) {
