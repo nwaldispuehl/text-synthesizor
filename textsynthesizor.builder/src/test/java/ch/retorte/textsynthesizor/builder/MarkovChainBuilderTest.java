@@ -15,7 +15,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import ch.retorte.textsynthesizor.builder.MarkovChainBuilder;
 import ch.retorte.textsynthesizor.model.Token;
 import ch.retorte.textsynthesizor.tokenizer.Tokenizer;
 

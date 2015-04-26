@@ -16,6 +16,8 @@ import ch.retorte.textsynthesizor.model.TokenFactory;
  */
 public class SentenceAwareWordTokenizer implements Tokenizer {
 
+  private static final String DELIMITER = " ";
+
   private TokenFactory tokenFactory = new TokenFactory();
 
   @Override

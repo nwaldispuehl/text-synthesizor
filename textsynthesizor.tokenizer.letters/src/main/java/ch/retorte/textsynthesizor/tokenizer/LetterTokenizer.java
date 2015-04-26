@@ -14,6 +14,8 @@ import ch.retorte.textsynthesizor.model.TokenFactory;
  */
 public class LetterTokenizer implements Tokenizer {
 
+  private static final String DELIMITER = "";
+
   private TokenFactory tokenFactory = new TokenFactory();
 
   @Override
@@ -21,7 +23,7 @@ public class LetterTokenizer implements Tokenizer {
     List<Token> result = newArrayList();
 
     boolean isFirst = true;
-    for (String s : input.split("")) {
+    for (String s : input.split(DELIMITER)) {
       if (!s.isEmpty()) {
         result.add(tokenFactory.createFrom(s, isFirst));
         isFirst = false;
@@ -33,6 +35,6 @@ public class LetterTokenizer implements Tokenizer {
 
   @Override
   public String getDelimiter() {
-    return "";
+    return DELIMITER;
   }
 }

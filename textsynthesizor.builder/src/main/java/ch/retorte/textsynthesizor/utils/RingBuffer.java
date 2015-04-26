@@ -26,11 +26,11 @@ public class RingBuffer<T> {
   public void addItem(T t) {
     if (0 < bufferSize) {
       buffer[position] = t;
-      incrementModularCounter();
+      incrementModularPositionCounter();
     }
   }
 
-  private void incrementModularCounter() {
+  private void incrementModularPositionCounter() {
     position = (position + 1) % bufferSize;
   }
 
