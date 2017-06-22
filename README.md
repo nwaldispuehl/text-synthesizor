@@ -135,7 +135,7 @@ $ cd text-synthesizor
 
 Build the project with [**gradle**](http://www.gradle.org/). Either use your own installation, or use the shipped version as shown here:
 ```
-text-synthesizor$ ./gradlew installDist
+text-synthesizor$ ./gradlew clean distZip
 ``` 
 
 Switch into the build directory and run the installed app:
