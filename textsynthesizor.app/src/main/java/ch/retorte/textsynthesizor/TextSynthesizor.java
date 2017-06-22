@@ -66,6 +66,7 @@ public class TextSynthesizor {
     }
     catch (ParseException e) {
       quitProgramWithError(e.getMessage());
+      return;
     }
 
     try {

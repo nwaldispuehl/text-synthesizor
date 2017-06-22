@@ -43,7 +43,7 @@ public class SentenceAwareWordTokenizer implements Tokenizer {
 
   @Override
   public String getDelimiter() {
-    return " ";
+    return DELIMITER;
   }
 
   private String[] getSequenceTerminators() {

@@ -117,7 +117,7 @@ public class MarkovChainBuilder {
 
   @VisibleForTesting
   void initializeBufferWithSize(int n) {
-    buffer = new RingBuffer<Token>(n);
+    buffer = new RingBuffer<>(n);
   }
 
   @VisibleForTesting

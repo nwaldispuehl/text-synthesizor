@@ -17,19 +17,19 @@ public class RingBufferTest {
 
   @Test
   public void shouldInstantiate() {
-    new RingBuffer<Object>(0);
+    new RingBuffer<>(0);
   }
 
   @Test
   public void shouldAcceptItemsEvenIfOfZeroLength() {
-    new RingBuffer<Object>(0).addItem(objectA);
+    new RingBuffer<>(0).addItem(objectA);
   }
 
   @Test
   public void shouldReturnObjectsInRightOrder() {
     // given
     int bufferSize = 2;
-    RingBuffer<Object> buffer = new RingBuffer<Object>(bufferSize);
+    RingBuffer<Object> buffer = new RingBuffer<>(bufferSize);
 
     // when
     buffer.addItem(objectA);
@@ -45,7 +45,7 @@ public class RingBufferTest {
   public void shouldOverwriteOldObjects() {
     // given
     int bufferSize = 1;
-    RingBuffer<Object> buffer = new RingBuffer<Object>(bufferSize);
+    RingBuffer<Object> buffer = new RingBuffer<>(bufferSize);
 
     // when
     buffer.addItem(objectA);

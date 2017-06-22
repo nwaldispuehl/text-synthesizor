@@ -63,7 +63,7 @@ public class Chain {
   }
 
   /**
-   * Flattens out the occurrence map of tokens, that is, puts every token as many times as it occurrs into a list so that we can just randomly pick one member
+   * Flattens out the occurrence map of tokens, that is, puts every token as many times as it occurs into a list so that we can just randomly pick one member
    * of the list.
    */
   private List<Token> getFlatTokenList(Map<Token, Integer> tokenMap) {
