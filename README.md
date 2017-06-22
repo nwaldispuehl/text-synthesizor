@@ -1,5 +1,4 @@
-Text Synthesizor
-================
+# Text Synthesizor
 
 _TextSynthesizor, a small text synthesizing utility based on the theory of [markov chains](http://en.wikipedia.org/wiki/Markov_chain)._
 
@@ -18,15 +17,16 @@ usage: textsynthesizor.app [OPTIONS] inputfile
 
 ##### Table of Contents  
 * [How does it work?](#how_does_it_work)  
- * [Varying N-Grams](#varying_ngrams) 
- * [Switch Tokenizers](#switch_tokenizers) 
+  * [Varying N-Grams](#varying_ngrams) 
+  * [Switch Tokenizers](#switch_tokenizers) 
 * [How to build and run?](#how_to_build_and_run)  
 * [How to download?](#how_to_download)  
 * [Current build status](#build)  
 
 <a name='how_does_it_work' />
-How does it work?
------------------
+
+## How does it work?
+
 Run the textsynthesizor with any text body to synthesize text with similar probability characteristic. Let's assume for the following examples we have a text file `king_cole.txt` containing this text:
 
 > Old King Cole was a merry old soul
@@ -49,6 +49,7 @@ $ textsynthesizor.app king_cole.txt
 By default, the textsynthesizor analyses all [2-grams](http://en.wikipedia.org/wiki/N-gram) (or, bigrams) with a sentence tokenizer and produces 40 tokens of output (in this case: words).
 
 <a name='varying_ngrams' />
+
 ### Varying N-Grams
 
 By varying the n-gram argument ('n' option) one can affect how much the output text looks like the original text. When selecting a larger value, the text is more similar to the source:
@@ -70,6 +71,7 @@ $ textsynthesizor.app -n 0 king_cole.txt
 > Every three. had and three. Oh called compare King Cole his and He can for for for soul three. Old can bowl soul so had and He bowl old He he; and King compare his compare soul had and a
 
 <a name='switch_tokenizers' />
+
 ### Switch Tokenizers
 
 We currently have three different tokenizers which can be selected by the 't' option. The default is the **'sentence'** tokenizer. It splits the source text up into words, but treats every sentence as independent source. The following two calls are equivalent.
@@ -122,8 +124,8 @@ $ textsynthesizor.app -t letter -s 120 -n 1 king_cole.txt
 > ars
 
 <a name='how_to_build_and_run' />
-How to build and run?
----------------------
+
+## How to build and run?
 
 Clone the repository and change into the cloned project:
 ```
@@ -148,8 +150,9 @@ text-synthesizor$ ./gradlew run
 ```
 
 <a name='how_to_download' />
-How to download?
----------------------
+
+## How to download?
+
 If you just want to try it out, download the latest release from the release directory:
 
 [Text-Synthesizor releases](https://github.com/nwaldispuehl/text-synthesizor/releases)
@@ -163,6 +166,7 @@ $ ./bin/textsynthesizor.app
 ``` 
 
 <a name='build' />
-Current build status
----------------------
+
+## Current build status
+
 [![Build Status](https://travis-ci.org/nwaldispuehl/text-synthesizor.svg?branch=master)](https://travis-ci.org/nwaldispuehl/text-synthesizor)
