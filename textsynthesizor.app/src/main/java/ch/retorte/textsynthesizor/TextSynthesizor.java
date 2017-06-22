@@ -91,7 +91,7 @@ public class TextSynthesizor {
 
   private void printProgramTitle() {
     System.out.println("Text Synthesizor -- Markov Chain Text Generation");
-    System.out.println("Analyses a input string by splitting it up into n-grams and observes the ");
+    System.out.println("Analyses an input string by splitting it up into n-grams and observes the ");
     System.out.println("probability of tokens which follow. Then generates a string which has the ");
     System.out.println("same probability characteristic.");
     System.out.println();

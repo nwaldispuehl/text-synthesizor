@@ -4,7 +4,7 @@ _TextSynthesizor, a small text synthesizing utility based on the theory of [mark
 
 ```
 Text Synthesizor -- Markov Chain Text Generation
-Analyses a input string by splitting it up into n-grams and observes the 
+Analyses an input string by splitting it up into n-grams and observes the 
 probability of tokens which follow. Then generates a string which has the 
 same probability characteristic.
 
